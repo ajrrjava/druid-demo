@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.strateknia'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation libs.avatica
+    implementation libs.kafka
+    implementation libs.log4j
+    implementation libs.lombok
+    annotationProcessor libs.lombok
+    implementation 'com.github.javafaker:javafaker:0.12'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
